@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Roboto', serif;
+}
+
+@keyframes glide-in {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-glide-in {
+  animation: glide-in 1.5s ease forwards; /* Adjust duration as needed */
+}
+
+@keyframes glideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes glide {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-glide {
+  animation: glide 2.5s ease forwards;
+}
+
+@keyframes glide-up {
+  0% {
+    transform: scaleY(0); /* Start from a scale of 0 */
+    opacity: 0;
+  }
+  100% {
+    transform: scaleY(1); /* Scale to its original size */
+    opacity: 1;
+  }
+}
+
+.animate-glide-up {
+  animation: glide-up 1s linear forwards; /* Adjusted duration and easing */
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0; /* Start fully transparent */
+  }
+  100% {
+    opacity: 1; /* End fully opaque */
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 3s; /* Adjust duration and easing as needed */
+}
+
+@keyframes zoom-in {
+  0% {
+    transform: scale(0.5); /* Start at half size */
+    opacity: 0; /* Start fully transparent */
+  }
+  100% {
+    transform: scale(1); /* End at normal size */
+    opacity: 1; /* End fully opaque */
+  }
+}
+
+.animate-zoom-in {
+  animation: zoom-in 1s ease forwards; /* Adjust duration and easing as needed */
+}
+
+@keyframes fade-scale-in {
+  0% {
+    transform: scale(0.8) rotate(-7deg);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.animate-fade-scale-in {
+  animation: fade-scale-in 1.4s ease-out forwards;
+}
