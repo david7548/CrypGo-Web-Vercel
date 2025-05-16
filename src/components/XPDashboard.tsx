@@ -1,6 +1,16 @@
 import React, { useState } from "react";
 import { FaTrophy, FaMedal, FaStar, FaLock } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { IconType } from "react-icons";
+
+interface Achievement {
+  id: number;
+  title: string;
+  description: string;
+  icon: IconType;
+  unlocked: boolean;
+  category: string;
+}
 
 const mockUserData = {
   currentLevel: 15,
@@ -15,10 +25,10 @@ const mockUserData = {
 };
 
 const XPDashboard = () => {
-  const [selectedAchievement, setSelectedAchievement] = useState(null);
+  const [selectedAchievement, setSelectedAchievement] = useState<Achievement | null>(null);
   const progressPercentage = (mockUserData.totalXP / mockUserData.nextLevelXP) * 100;
 
-  const getLevelColor = (level) => {
+  const getLevelColor = (level: number) => {
     if (level >= 20) return "text-yellow-500";
     if (level >= 10) return "text-gray-400";
     return "text-amber-600";
