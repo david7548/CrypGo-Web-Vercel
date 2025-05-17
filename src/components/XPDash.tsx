@@ -216,35 +216,35 @@ const calculateLevel = (xp: number): string => {
 
     if (!isAuthenticated) {
       return (
-        <div className="min-h-screen p-6 bg-cover bg-center relative" style={{ backgroundImage: "url('/img/Frame1.png')" }}>
-          <div className="max-w-4xl mx-auto bg-white border py-3 px-6 rounded-2xl shadow-lg">
+        <div className="min-h-screen p-4 md:p-6 bg-cover bg-center relative" style={{ backgroundImage: "url('/img/Frame1.png')" }}>
+          <div className="max-w-4xl mx-auto bg-white border py-3 px-4 md:px-6 rounded-2xl shadow-lg">
             {/* Profile Card */}
-            <div className="p-6 mb-10 text-center">
-              <div className="flex flex-row justify-between items-center mb-4">
-                <div className="flex items-center mb-1">
-                  <span className="text-orange-500 text-3xl">🏆</span>
+            <div className="p-4 md:p-6 mb-6 md:mb-10 text-center">
+              <div className="flex flex-col md:flex-row justify-between items-center mb-4 space-y-4 md:space-y-0">
+                <div className="flex items-center">
+                  <span className="text-orange-500 text-2xl md:text-3xl">🏆</span>
                   <div className="flex flex-col m-2">
-                    <span>#{userRank || "--"}</span>
-                    <div className="text-sm text-gray-500">Rank</div>
+                    <span className="text-lg md:text-xl">#{userRank || "--"}</span>
+                    <div className="text-xs md:text-sm text-gray-500">Rank</div>
                   </div>
                 </div>
-                <div className="flex flex-col items-center text-center mr-12">
+                <div className="flex flex-col items-center text-center md:mr-12">
                   <img
                     src={userData.profilePic || "/img/default-avatar.png"}
                     alt="User Avatar"
-                    className="w-20 h-20 rounded-full border-2 border-gray-300 object-cover mb-1"
+                    className="w-16 h-16 md:w-20 md:h-20 rounded-full border-2 border-gray-300 object-cover mb-1"
                   />
-                  <h2 className="text-lg font-bold mt-2 text-gray-800">{userData.username}</h2>
+                  <h2 className="text-base md:text-lg font-bold mt-2 text-gray-800">{userData.username}</h2>
                 </div>
-                <div className="text-md text-black">
+                <div className="text-sm md:text-md text-black">
                   {userData.xp} Xp
-                  <div className="text-sm text-gray-500 mt-1">{userData.level}</div>
+                  <div className="text-xs md:text-sm text-gray-500 mt-1">{userData.level}</div>
                 </div>
               </div>
     
               {/* XP Bar */}
               <div className="mt-4">
-                <div className="text-sm text-gray-600 font-medium mb-1 text-left">Progress to  {levelNames[levelNames.indexOf(userData.level) + 1] || "Max Level"} Level</div>
+                <div className="text-xs md:text-sm text-gray-600 font-medium mb-1 text-left">Progress to {levelNames[levelNames.indexOf(userData.level) + 1] || "Max Level"} Level</div>
                 <div className="w-full bg-gray-300 h-2 rounded-full overflow-hidden">
                   <motion.div
                     style={{ width: `${((userData.xp % 1000) / 1000) * 100}%` }}
@@ -257,39 +257,39 @@ const calculateLevel = (xp: number): string => {
               </div>
     
               {/* Stats Row */}
-              <div className="grid grid-cols-3 gap-4 mt-6">
-                <div className="bg-gray-50 shadow-md rounded-xl p-4">
-                  <p className="text-xl font-bold text-indigo-500">{userData.xp}</p>
+              <div className="grid grid-cols-3 gap-2 md:gap-4 mt-4 md:mt-6">
+                <div className="bg-gray-50 shadow-md rounded-xl p-3 md:p-4">
+                  <p className="text-lg md:text-xl font-bold text-indigo-500">{userData.xp}</p>
                   <p className="text-xs text-gray-500 mt-1">Total Xp</p>
                 </div>
-                <div className="bg-gray-50 shadow-md rounded-xl p-4">
-                  <p className="text-xl font-bold text-indigo-500">{userData.level}</p>
+                <div className="bg-gray-50 shadow-md rounded-xl p-3 md:p-4">
+                  <p className="text-lg md:text-xl font-bold text-indigo-500">{userData.level}</p>
                   <p className="text-xs text-gray-500 mt-1">Current Level</p>
                 </div>
-                <div className="bg-gray-50 shadow-md rounded-xl p-4">
-                  <p className="text-xl font-bold text-indigo-500">{userData.streak.toString().padStart(2, '0')}</p>
+                <div className="bg-gray-50 shadow-md rounded-xl p-3 md:p-4">
+                  <p className="text-lg md:text-xl font-bold text-indigo-500">{userData.streak.toString().padStart(2, '0')}</p>
                   <p className="text-xs text-gray-500 mt-1">Day Streak</p>
                 </div>
               </div>
             </div>
     
             {/* Daily Challenges */}
-            <div className="bg-gray-50 shadow-md rounded-xl p-6 mb-10">
-              <h2 className="text-lg font-bold text-gray-800 mb-4">Daily Challenges</h2>
+            <div className="bg-gray-50 shadow-md rounded-xl p-4 md:p-6 mb-6 md:mb-10">
+              <h2 className="text-base md:text-lg font-bold text-gray-800 mb-3 md:mb-4">Daily Challenges</h2>
               {dailyChallenges.map((challenge, index) => (
                 <div
                   key={index}
-                  className={`flex justify-between items-center p-4 rounded-xl border mb-2 ${
+                  className={`flex flex-col md:flex-row justify-between items-start md:items-center p-3 md:p-4 rounded-xl border mb-2 ${
                     challenge.completed ? "border-indigo-500 bg-indigo-100" : "border-indigo-100 bg-purple-50"
                   }`}
                 >
-                  <div>
-                    <h3 className={`font-semibold ${challenge.completed ? "text-indigo-500" : "text-indigo-700"}`}>
+                  <div className="mb-2 md:mb-0">
+                    <h3 className={`text-sm md:text-base font-semibold ${challenge.completed ? "text-indigo-500" : "text-indigo-700"}`}>
                       {challenge.title}
                     </h3>
                     <p className="text-xs text-gray-700">{challenge.description}</p>
                   </div>
-                  <span className="bg-indigo-500 text-white text-sm font-semibold px-4 py-1 rounded-md">
+                  <span className="bg-indigo-500 text-white text-xs md:text-sm font-semibold px-3 md:px-4 py-1 rounded-md">
                     +{challenge.xp} XP
                   </span>
                 </div>
@@ -297,21 +297,19 @@ const calculateLevel = (xp: number): string => {
             </div>
     
             {/* Achievements */}
-            <div className="bg-gray-50 shadow-md rounded-xl p-6">
-              <h2 className="text-lg font-bold text-gray-800 mb-4">Achievements</h2>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+            <div className="bg-gray-50 shadow-md rounded-xl p-4 md:p-6">
+              <h2 className="text-base md:text-lg font-bold text-gray-800 mb-3 md:mb-4">Achievements</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
                 {userAchievements.map((achievement, index) => (
                   <div
                     key={index}
-                    className={`rounded-lg px-4 py-6 text-center border ${
+                    className={`rounded-lg px-3 md:px-4 py-4 md:py-6 text-center border ${
                       achievement.unlocked ? "border-indigo-300 bg-indigo-100" : "border-indigo-200 bg-indigo-100 opacity-30"
                     } flex items-center justify-center relative`}>
-
-                    {/* Lock icon positioned in the center */}
                     {!achievement.unlocked && (
-                      <FaLock className="text-black text-xs absolute top mb-10 transform -translate-y-1/2 right-2" />
+                      <FaLock className="text-black text-xs absolute top mb-8 md:mb-10 transform -translate-y-1/2 right-2" />
                     )}
-                    <h3 className={`font-bold mb-2 ${achievement.unlocked ? "text-indigo-700" : "text-indigo-500"}`}>
+                    <h3 className={`text-sm md:text-base font-bold ${achievement.unlocked ? "text-indigo-700" : "text-indigo-500"}`}>
                       {achievement.title}
                     </h3>
                   </div>
@@ -321,13 +319,13 @@ const calculateLevel = (xp: number): string => {
           </div>
           
           {/* Semi-transparent overlay */}
-          <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-            <div className="bg-white p-8 rounded-2xl shadow-xl text-center max-w-md">
-              <h2 className="text-2xl font-bold text-gray-800 mb-4">Sign In Required</h2>
-              <p className="text-gray-600 mb-6">Please sign in or create an account to view your XP Dashboard.</p>
+          <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
+            <div className="bg-white p-6 md:p-8 rounded-2xl shadow-xl text-center w-full max-w-md">
+              <h2 className="text-xl md:text-2xl font-bold text-gray-800 mb-3 md:mb-4">Sign In Required</h2>
+              <p className="text-sm md:text-base text-gray-600 mb-4 md:mb-6">Please sign in or create an account to view your XP Dashboard.</p>
               <button
                 onClick={() => router.push('/signup')}
-                className="bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition-colors"
+                className="w-full md:w-auto bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition-colors"
               >
                 Sign Up / Sign In
               </button>
@@ -338,35 +336,35 @@ const calculateLevel = (xp: number): string => {
     }
 
     return (
-      <div className="min-h-screen p-6 bg-cover bg-center" style={{ backgroundImage: "url('/img/Frame1.png')" }}>
-        <div className="max-w-4xl mx-auto bg-white border py-3 px-6 rounded-2xl shadow-lg ">
+      <div className="min-h-screen p-4 md:p-6 bg-cover bg-center" style={{ backgroundImage: "url('/img/Frame1.png')" }}>
+        <div className="max-w-4xl mx-auto bg-white border py-3 px-4 md:px-6 rounded-2xl shadow-lg">
           {/* Profile Card */}
-          <div className="p-6 mb-10 text-center">
-            <div className="flex flex-row justify-between items-center mb-4">
-              <div className="flex items-center mb-1">
-                <span className="text-orange-500 text-3xl">🏆</span>
+          <div className="p-4 md:p-6 mb-6 md:mb-10 text-center">
+            <div className="flex flex-col md:flex-row justify-between items-center mb-4 space-y-4 md:space-y-0">
+              <div className="flex items-center">
+                <span className="text-orange-500 text-2xl md:text-3xl">🏆</span>
                 <div className="flex flex-col m-2">
-                  <span>#{userRank || "--"}</span>
-                  <div className="text-sm text-gray-500">Rank</div>
+                  <span className="text-lg md:text-xl">#{userRank || "--"}</span>
+                  <div className="text-xs md:text-sm text-gray-500">Rank</div>
                 </div>
               </div>
-              <div className="flex flex-col items-center text-center mr-12">
+              <div className="flex flex-col items-center text-center md:mr-12">
                 <img
                   src={userData.profilePic || "/img/default-avatar.png"}
                   alt="User Avatar"
-                  className="w-20 h-20 rounded-full border-2 border-gray-300 object-cover mb-1"
+                  className="w-16 h-16 md:w-20 md:h-20 rounded-full border-2 border-gray-300 object-cover mb-1"
                 />
-                <h2 className="text-lg font-bold mt-2 text-gray-800">{userData.username}</h2>
+                <h2 className="text-base md:text-lg font-bold mt-2 text-gray-800">{userData.username}</h2>
               </div>
-              <div className="text-md text-black">
+              <div className="text-sm md:text-md text-black">
                 {userData.xp} Xp
-                <div className="text-sm text-gray-500 mt-1">{userData.level}</div>
+                <div className="text-xs md:text-sm text-gray-500 mt-1">{userData.level}</div>
               </div>
             </div>
     
             {/* XP Bar */}
             <div className="mt-4">
-              <div className="text-sm text-gray-600 font-medium mb-1 text-left">Progress to  {levelNames[levelNames.indexOf(userData.level) + 1] || "Max Level"} Level</div>
+              <div className="text-xs md:text-sm text-gray-600 font-medium mb-1 text-left">Progress to {levelNames[levelNames.indexOf(userData.level) + 1] || "Max Level"} Level</div>
               <div className="w-full bg-gray-300 h-2 rounded-full overflow-hidden">
                 <motion.div
                   style={{ width: `${((userData.xp % 1000) / 1000) * 100}%` }}
@@ -379,39 +377,39 @@ const calculateLevel = (xp: number): string => {
             </div>
     
             {/* Stats Row */}
-            <div className="grid grid-cols-3 gap-4 mt-6">
-              <div className="bg-gray-50 shadow-md rounded-xl p-4">
-                <p className="text-xl font-bold text-indigo-500">{userData.xp}</p>
+            <div className="grid grid-cols-3 gap-2 md:gap-4 mt-4 md:mt-6">
+              <div className="bg-gray-50 shadow-md rounded-xl p-3 md:p-4">
+                <p className="text-lg md:text-xl font-bold text-indigo-500">{userData.xp}</p>
                 <p className="text-xs text-gray-500 mt-1">Total Xp</p>
               </div>
-              <div className="bg-gray-50 shadow-md rounded-xl p-4">
-                <p className="text-xl font-bold text-indigo-500">{userData.level}</p>
+              <div className="bg-gray-50 shadow-md rounded-xl p-3 md:p-4">
+                <p className="text-lg md:text-xl font-bold text-indigo-500">{userData.level}</p>
                 <p className="text-xs text-gray-500 mt-1">Current Level</p>
               </div>
-              <div className="bg-gray-50 shadow-md rounded-xl p-4">
-                <p className="text-xl font-bold text-indigo-500">{userData.streak.toString().padStart(2, '0')}</p>
+              <div className="bg-gray-50 shadow-md rounded-xl p-3 md:p-4">
+                <p className="text-lg md:text-xl font-bold text-indigo-500">{userData.streak.toString().padStart(2, '0')}</p>
                 <p className="text-xs text-gray-500 mt-1">Day Streak</p>
               </div>
             </div>
           </div>
     
           {/* Daily Challenges */}
-          <div className="bg-gray-50 shadow-md rounded-xl p-6 mb-10">
-            <h2 className="text-lg font-bold text-gray-800 mb-4">Daily Challenges</h2>
+          <div className="bg-gray-50 shadow-md rounded-xl p-4 md:p-6 mb-6 md:mb-10">
+            <h2 className="text-base md:text-lg font-bold text-gray-800 mb-3 md:mb-4">Daily Challenges</h2>
             {dailyChallenges.map((challenge, index) => (
               <div
                 key={index}
-                className={`flex justify-between items-center p-4 rounded-xl border mb-2 ${
+                className={`flex flex-col md:flex-row justify-between items-start md:items-center p-3 md:p-4 rounded-xl border mb-2 ${
                   challenge.completed ? "border-indigo-500 bg-indigo-100" : "border-indigo-100 bg-purple-50"
                 }`}
               >
-                <div>
-                  <h3 className={`font-semibold ${challenge.completed ? "text-indigo-500" : "text-indigo-700"}`}>
+                <div className="mb-2 md:mb-0">
+                  <h3 className={`text-sm md:text-base font-semibold ${challenge.completed ? "text-indigo-500" : "text-indigo-700"}`}>
                     {challenge.title}
                   </h3>
                   <p className="text-xs text-gray-700">{challenge.description}</p>
                 </div>
-                <span className="bg-indigo-500 text-white text-sm font-semibold px-4 py-1 rounded-md">
+                <span className="bg-indigo-500 text-white text-xs md:text-sm font-semibold px-3 md:px-4 py-1 rounded-md">
                   +{challenge.xp} XP
                 </span>
               </div>
@@ -419,21 +417,19 @@ const calculateLevel = (xp: number): string => {
           </div>
     
           {/* Achievements */}
-          <div className="bg-gray-50 shadow-md rounded-xl p-6">
-            <h2 className="text-lg font-bold text-gray-800 mb-4">Achievements</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+          <div className="bg-gray-50 shadow-md rounded-xl p-4 md:p-6">
+            <h2 className="text-base md:text-lg font-bold text-gray-800 mb-3 md:mb-4">Achievements</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
               {userAchievements.map((achievement, index) => (
                 <div
                   key={index}
-                  className={`rounded-lg px-4 py-6 text-center border ${
+                  className={`rounded-lg px-3 md:px-4 py-4 md:py-6 text-center border ${
                     achievement.unlocked ? "border-indigo-300 bg-indigo-100" : "border-indigo-200 bg-indigo-100 opacity-30"
                   } flex items-center justify-center relative`}>
-
-                  {/* Lock icon positioned in the center */}
                   {!achievement.unlocked && (
-                    <FaLock className="text-black text-xs absolute top mb-10 transform -translate-y-1/2 right-2" />
+                    <FaLock className="text-black text-xs absolute top mb-8 md:mb-10 transform -translate-y-1/2 right-2" />
                   )}
-                  <h3 className={`font-bold mb-2 ${achievement.unlocked ? "text-indigo-700" : "text-indigo-500"}`}>
+                  <h3 className={`text-sm md:text-base font-bold ${achievement.unlocked ? "text-indigo-700" : "text-indigo-500"}`}>
                     {achievement.title}
                   </h3>
                 </div>
