@@ -47,19 +47,19 @@ export default function CompletionPage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center text-white p-6" style={{ backgroundImage: "url('/img/Frame1.png')" }}> 
+    <div className="min-h-screen flex flex-col items-center justify-center text-black p-6" style={{ backgroundImage: "url('/img/Frame1.png')" }}> 
       <h1 className="text-4xl font-bold mb-4">🎉 Congratulations! 🎉</h1>
       <p className="text-lg text-center max-w-xl">
-        You’ve successfully completed the course! Great work! 🚀
+        You've successfully completed the course! Great work! 🚀
       </p>
 
       {/* ✅ Offer Extra XP */}
       {!bonusXpEarned ? (
         <button
-          onClick={handleWatchAd}
-          className="mt-6 px-6 py-2 bg-yellow-400 text-gray-900 font-semibold rounded-lg shadow-md hover:bg-yellow-500 transition"
+          disabled
+          className="mt-6 px-6 py-2 bg-gray-300 text-gray-500 font-semibold rounded-lg shadow-md cursor-not-allowed opacity-75"
         >
-          🎥 Watch an Ad & Earn 100 XP!
+          🎥 Watch an Ad & Earn 100 XP! (Coming Soon)
         </button>
       ) : (
         <p className="mt-6 text-lg">✅ You earned 100 bonus XP!</p>
