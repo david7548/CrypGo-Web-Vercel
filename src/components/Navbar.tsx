@@ -5,10 +5,11 @@ import { useEffect, useState } from "react";
 import { auth, db } from "@/firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import { doc, getDoc } from "firebase/firestore";
-import { FaBook } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 export default function Navbar() {
   const [profilePic, setProfilePic] = useState("/img/default-avatar.png");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname(); // 🔹 Get current route
 
   useEffect(() => {
@@ -50,7 +51,9 @@ export default function Navbar() {
             <span className="text-indigo-500">Go</span>
           </Link>
         </h1>
-        <div className="text-gray-900 space-x-10 text-xs flex items-center justify-center flex-grow">
+
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex text-gray-900 space-x-10 text-xs items-center justify-center flex-grow">
           <Link href="/courses" className={navLinkClass("/courses")}>
             Courses
           </Link>
@@ -64,6 +67,16 @@ export default function Navbar() {
             Leaderboard
           </Link>
         </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden p-2 text-gray-700 hover:text-gray-900 focus:outline-none"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+        </button>
+
         <Link href="/settings" className="ml-2">
           <img
             src={profilePic}
@@ -71,6 +84,44 @@ export default function Navbar() {
             className="bg-white w-8 h-8 rounded-full cursor-pointer"
           />
         </Link>
+      </div>
+
+      {/* Mobile Navigation Menu */}
+      <div
+        className={`md:hidden ${
+          isMenuOpen ? "block" : "hidden"
+        } bg-white border-t border-gray-100`}
+      >
+        <div className="px-4 py-2 space-y-3">
+          <Link
+            href="/courses"
+            className={`block py-2 ${navLinkClass("/courses")}`}
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Courses
+          </Link>
+          <Link
+            href="/trading"
+            className={`block py-2 ${navLinkClass("/trading")}`}
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Trading
+          </Link>
+          <Link
+            href="/xp-dashboard"
+            className={`block py-2 ${navLinkClass("/xp-dashboard")}`}
+            onClick={() => setIsMenuOpen(false)}
+          >
+            XP Dashboard
+          </Link>
+          <Link
+            href="/leaderboard"
+            className={`block py-2 ${navLinkClass("/leaderboard")}`}
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Leaderboard
+          </Link>
+        </div>
       </div>
     </nav>
   );
