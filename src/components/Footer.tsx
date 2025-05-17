@@ -4,10 +4,10 @@ import { FaTwitter, FaTelegram, FaDiscord } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="bg-indigo-500 text-white py-6 md:py-4">
+    <footer className="bg-indigo-500 text-white py-4 md:py-4">
       <div className="container mx-auto px-4 md:px-6">
         {/* Mobile Layout */}
-        <div className="md:hidden flex flex-col items-center space-y-6">
+        <div className="md:hidden flex flex-col items-center space-y-3">
           {/* Social Icons */}
           <div className="flex gap-6">
             <a href="https://x.com/crypgo_app" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition">
@@ -22,23 +22,23 @@ export default function Footer() {
           </div>
 
           {/* Navigation Links */}
-          <div className="flex flex-col items-center space-y-3">
-            <Link href="/" className="hover:underline text-base">
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link href="/" className="hover:underline text-sm">
               Terms of Service
             </Link>
-            <Link href="/" className="hover:underline text-base">
+            <Link href="/" className="hover:underline text-sm">
               Privacy Policy
             </Link>
-            <Link href="/" className="hover:underline text-base">
+            <Link href="/" className="hover:underline text-sm">
               Support
             </Link>
-            <Link href="/" className="hover:underline text-base">
+            <Link href="/" className="hover:underline text-sm">
               Blog
             </Link>
           </div>
 
           {/* Copyright */}
-          <p className="text-white text-sm text-center">
+          <p className="text-white text-xs text-center">
             © {new Date().getFullYear()} CrypGo. All rights reserved.
           </p>
         </div>
