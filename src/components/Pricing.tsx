@@ -8,8 +8,8 @@ const ComparisonTable = () => {
     { name: "Advanced Courses Access", free: false, pro: true },
     { name: "XP Boosts", free: false, pro: true },
     { name: "Leaderboard Eligibility", free: true, pro: true },
-    { name: "Trading", free: false, pro: true },
-    { name: "NFT Rewards", free: false, pro: true },
+    { name: "Trading Simulator", free: false, pro: true },
+    { name: "Social Hub Access", free: false, pro: true },
   ];
 
   return (
