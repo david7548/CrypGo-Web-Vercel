@@ -222,7 +222,7 @@ const calculateLevel = (xp: number): string => {
             <div className="p-4 md:p-6 mb-6 md:mb-10 text-center">
               <div className="flex flex-col md:flex-row justify-between items-center mb-4 space-y-4 md:space-y-0">
                 <div className="flex items-center">
-                  <span className="text-orange-500 text-2xl md:text-3xl">🏆</span>
+                  <span className="text-orange-500 text-2xl md:text-3xl"></span>
                   <div className="flex flex-col m-2">
                     <span className="text-lg md:text-xl">#{userRank || "--"}</span>
                     <div className="text-xs md:text-sm text-gray-500">Rank</div>
@@ -237,7 +237,7 @@ const calculateLevel = (xp: number): string => {
                   <h2 className="text-base md:text-lg font-bold mt-2 text-gray-800">{userData.username}</h2>
                 </div>
                 <div className="text-sm md:text-md text-black">
-                  {userData.xp} Xp
+                  {userData.xp} XP
                   <div className="text-xs md:text-sm text-gray-500 mt-1">{userData.level}</div>
                 </div>
               </div>

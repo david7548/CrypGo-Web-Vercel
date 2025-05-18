@@ -175,32 +175,32 @@ const CoursesCatalog = () => {
           <img
             src={course.image}
             alt={course.title}
-            className="w-full h-48 object-cover rounded-t-lg transform transition-transform duration-300 group-hover:scale-110"
+            className="w-full h-36 sm:h-48 object-cover rounded-t-lg transform transition-transform duration-300 group-hover:scale-110"
             loading="lazy"
           />
           {/* Show Lock Icon if Course is Locked */}
           {isLocked && (
             <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-              <FiLock className="text-white text-3xl" />
+              <FiLock className="text-white text-2xl sm:text-3xl" />
             </div>
           )}
         </div>
 
         {/* Course Details */}
-        <div className="p-6 flex-1 flex flex-col">
-          <h3 className="text-md font-bold mb-2 text-gray-800">{course.title}</h3>
-          <p className="text-gray-600 mb-2 text-sm flex-1">{course.description}</p>
-          <div className="text-sm text-gray-500 mb-4">
-            <div className="flex items-center gap-4">
+        <div className="p-4 sm:p-6 flex-1 flex flex-col">
+          <h3 className="text-sm sm:text-md font-bold mb-2 text-gray-800 line-clamp-2">{course.title}</h3>
+          <p className="text-xs sm:text-sm text-gray-600 mb-2 flex-1 line-clamp-3">{course.description}</p>
+          <div className="text-xs sm:text-sm text-gray-500 mb-3 sm:mb-4">
+            <div className="flex items-center gap-2 sm:gap-4">
               <span className="flex items-center gap-1">
-                <span className="bg-blue-100 rounded-md p-1 mr-2">
-                  <FiClock className="text-indigo-500 h-4 w-4" />
+                <span className="bg-blue-100 rounded-md p-1 mr-1 sm:mr-2">
+                  <FiClock className="text-indigo-500 h-3 w-3 sm:h-4 sm:w-4" />
                 </span>
                 {course.duration}
               </span>
-              <span className="flex items-center gap-1 ml-2">
-                <span className="bg-blue-100 rounded-md p-1 mr-2">
-                  <FiStar className="text-indigo-500 h-4 w-4" />
+              <span className="flex items-center gap-1 ml-1 sm:ml-2">
+                <span className="bg-blue-100 rounded-md p-1 mr-1 sm:mr-2">
+                  <FiStar className="text-indigo-500 h-3 w-3 sm:h-4 sm:w-4" />
                 </span>
                 {course.category} XP
               </span>
@@ -211,14 +211,14 @@ const CoursesCatalog = () => {
           <div className="flex justify-between items-center mt-auto">
             <a
               href={isLocked ? "#" : `/courses/${course.id}`}
-              className={`w-full flex justify-center items-center px-4 py-2 rounded-lg transition-all duration-300 ${
+              className={`w-full flex justify-center items-center px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg transition-all duration-300 text-xs sm:text-sm ${
                 isLocked
-                  ? "bg-gray-400 text-center text-sm text-gray-800 cursor-not-allowed"
-                  : "bg-indigo-500 text-center text-sm text-white hover:bg-blue-700"
+                  ? "bg-gray-400 text-center text-gray-800 cursor-not-allowed"
+                  : "bg-indigo-500 text-center text-white hover:bg-blue-700"
               }`}
             >
               {isLocked ? (
-                <span className="text-white text-sm flex items-center">{course.isProOnly ? <><FiLock className="text-white mr-1" /> Pro Only</> : <><FiLock className="text-white mr-1" /> {course.xpRequired} XP Required</>}</span>
+                <span className="text-white flex items-center">{course.isProOnly ? <><FiLock className="text-white mr-1 h-3 w-3 sm:h-4 sm:w-4" /> Pro Only</> : <><FiLock className="text-white mr-1 h-3 w-3 sm:h-4 sm:w-4" /> {course.xpRequired} XP Required</>}</span>
               ) : "Enroll Now"}
             </a>
           </div>
@@ -228,10 +228,9 @@ const CoursesCatalog = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-white py-6 sm:py-12 px-3 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
           {filteredAndSortedCourses.map((course) => (
             <CourseCard key={course.id} course={course} userXP={userXP} isProUser={isProUser} />
           ))}

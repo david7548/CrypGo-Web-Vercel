@@ -53,14 +53,14 @@ const HowItWorks = () => {
   };
 
   return (
-    <div className="bg-white mx-auto px-4 py-16 sm:px-6 lg:px-8 bg-gray-50">
-      <div className="text-center mb-10 mt-10">
-        <h2 className="text-4xl font-bold text-black mb-2">How It Works</h2>
-        <p className="text-gray-600">Your learning journey made simple and rewarding</p>
+    <div className="bg-white mx-auto px-4 py-8 sm:py-16 sm:px-6 lg:px-8 bg-gray-50">
+      <div className="text-center mb-6 sm:mb-10 mt-6 sm:mt-10">
+        <h2 className="text-3xl sm:text-4xl font-bold text-black mb-2">How It Works</h2>
+        <p className="text-sm sm:text-base text-gray-600">Your learning journey made simple and rewarding</p>
       </div>
 
       <motion.div
-        className="grid gap-8 lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1"
+        className="grid gap-4 sm:gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -73,18 +73,18 @@ const HowItWorks = () => {
             variants={cardVariants}
           >
             <Link href={step.href} className="block">
-              <div className="bg-white rounded-xl shadow-md mb-16 p-7 w-full max-w-lg hover:shadow-xl hover:outline hover:outline-blue-500 hover:translate-y-[-4px] transition-transform duration-300">
-                <div className="flex items-center gap-4">
+              <div className="bg-white rounded-xl shadow-md mb-8 sm:mb-16 p-4 sm:p-7 w-full max-w-lg hover:shadow-xl hover:outline hover:outline-blue-500 hover:translate-y-[-4px] transition-transform duration-300">
+                <div className="flex items-center gap-3 sm:gap-4">
                   <div className="p-2 bg-blue-100 rounded-md">
                     {step.icon}
                   </div>
                   <div>
-                    <h3 className="text-md font-semibold text-gray-900">
+                    <h3 className="text-sm sm:text-md font-semibold text-gray-900">
                       {step.title}
                     </h3>
                   </div>
                 </div>
-                <p className="mt-4 mb-4 text-gray-600 leading-relaxed">
+                <p className="mt-3 sm:mt-4 mb-3 sm:mb-4 text-sm sm:text-base text-gray-600 leading-relaxed">
                   {step.description}
                 </p>
               </div>
