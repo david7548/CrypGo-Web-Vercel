@@ -3,7 +3,6 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Analytics } from '@vercel/analytics/next';
 import { PostHogProvider } from "@/providers/PostHogProvider";
-import PostHogPageView from "@/components/PostHogPageView";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -17,7 +16,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="bg-gray-100 m-0 p-0 font-roboto text-gray-800">
         <PostHogProvider>
-        <PostHogPageView />
           <Navbar />
           <main className="w-full m-0 p-0">{children}</main>
           <Footer />
