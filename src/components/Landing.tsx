@@ -25,7 +25,12 @@ export default function Landing() {
       <div className="relative w-full md:w-1/2 mt-4 md:mt-0 flex justify-center items-center animate-fade-scale-in">
         {/* Main Image */}
         <div className="w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] md:w-[500px] md:h-[500px] relative z-0 rounded-full overflow-hidden shadow-lg border-2 border-indigo-500">
-          <Image src="/img/marketpic.jpeg" alt="Crypto Chart" layout="fill" objectFit="cover" />
+          <Image
+            src="/img/marketpic.jpeg"
+            alt="Crypto Chart"
+            fill
+            style={{ objectFit: 'cover' }}
+          />
         </div>
 
         {/* Floating Cards - Mobile Adjusted Positions */}
