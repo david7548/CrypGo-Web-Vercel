@@ -64,7 +64,7 @@ export default function Home() {
 
       
       <AnimatedSection
-        initial={{ opacity: 0, x: 10 }}
+        initial={{ opacity: 0, x: 2 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}
       >
@@ -79,7 +79,7 @@ export default function Home() {
       
 
       <AnimatedSection
-        initial={{ opacity: 0, x: -50 }}
+        initial={{ opacity: 0, x: -5 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}
       >
@@ -92,7 +92,7 @@ export default function Home() {
 
 
       <AnimatedSection
-        initial={{ opacity: 0, x: 10 }}
+        initial={{ opacity: 0, x: 2 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6 }}
       >

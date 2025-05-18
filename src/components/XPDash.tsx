@@ -220,15 +220,14 @@ const calculateLevel = (xp: number): string => {
           <div className="max-w-4xl mx-auto bg-white border py-3 px-4 md:px-6 rounded-2xl shadow-lg">
             {/* Profile Card */}
             <div className="p-4 md:p-6 mb-6 md:mb-10 text-center">
-              <div className="flex flex-col md:flex-row justify-between items-center mb-4 space-y-4 md:space-y-0">
+              <div className="flex flex-row justify-between items-center mb-4">
                 <div className="flex items-center">
-                  <span className="text-orange-500 text-2xl md:text-3xl"></span>
                   <div className="flex flex-col m-2">
                     <span className="text-lg md:text-xl">#{userRank || "--"}</span>
                     <div className="text-xs md:text-sm text-gray-500">Rank</div>
                   </div>
                 </div>
-                <div className="flex flex-col items-center text-center md:mr-12">
+                <div className="flex flex-col items-center text-center">
                   <img
                     src={userData.profilePic || "/img/default-avatar.png"}
                     alt="User Avatar"
@@ -236,8 +235,8 @@ const calculateLevel = (xp: number): string => {
                   />
                   <h2 className="text-base md:text-lg font-bold mt-2 text-gray-800">{userData.username}</h2>
                 </div>
-                <div className="text-sm md:text-md text-black">
-                  {userData.xp} XP
+                <div className="text-l md:text-md text-black">
+                  {userData.xp} Xp
                   <div className="text-xs md:text-sm text-gray-500 mt-1">{userData.level}</div>
                 </div>
               </div>
@@ -340,15 +339,14 @@ const calculateLevel = (xp: number): string => {
         <div className="max-w-4xl mx-auto bg-white border py-3 px-4 md:px-6 rounded-2xl shadow-lg">
           {/* Profile Card */}
           <div className="p-4 md:p-6 mb-6 md:mb-10 text-center">
-            <div className="flex flex-col md:flex-row justify-between items-center mb-4 space-y-4 md:space-y-0">
+            <div className="flex flex-row justify-between items-center mb-4">
               <div className="flex items-center">
-                <span className="text-orange-500 text-2xl md:text-3xl">🏆</span>
                 <div className="flex flex-col m-2">
                   <span className="text-lg md:text-xl">#{userRank || "--"}</span>
                   <div className="text-xs md:text-sm text-gray-500">Rank</div>
                 </div>
               </div>
-              <div className="flex flex-col items-center text-center md:mr-12">
+              <div className="flex flex-col items-center text-center">
                 <img
                   src={userData.profilePic || "/img/default-avatar.png"}
                   alt="User Avatar"
@@ -356,7 +354,7 @@ const calculateLevel = (xp: number): string => {
                 />
                 <h2 className="text-base md:text-lg font-bold mt-2 text-gray-800">{userData.username}</h2>
               </div>
-              <div className="text-sm md:text-md text-black">
+              <div className="text-l md:text-md text-black">
                 {userData.xp} Xp
                 <div className="text-xs md:text-sm text-gray-500 mt-1">{userData.level}</div>
               </div>
