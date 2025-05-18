@@ -10,31 +10,31 @@ const PopularCourses = () => {
       <div className="mb-10 max-w-7xl mx-auto">
         <h2 className="text-3xl font-bold text-center text-black mb-2">Our Most Popular Courses</h2>
         <p className="text-center text-gray-500 text-base">
-          Let's join our famous class, the knowledge provided will definitely be useful for you.
+        These are the crowd favorites. Clear, engaging, and packed with practical knowledge to boost your crypto journey.
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 md:px-20">
         {[
           {
-            image: "/img/coinnode.jpeg",
-            title: "Crypto 101: Understanding Bitcoin And Blockchain",
-            description: "Learn Bitcoin, blockchain basics, crypto fundamentals, and decentralized technology.",
+            image: "/img/coursesnode.jpeg",
+            title: "Crypto 101: The Basics of Digital Currency",
+            description: "Understand the fundamentals of cryptocurrency, how it works, and why it's different from traditional currency.",
             duration: "30 Mins",
             xp: "150 XP",
             level: "Beginner"
           },
           {
             image: "/img/students.jpeg",
-            title: "Breaking Into Web3: How to Land a Job in Crypto & Blockchain",
-            description: "Get into Web3, build skills, network, gain experience, and land a crypto job.",
+            title: "Trading 101: Crypto Trading & Technical Analysis",
+            description: "Learn the basics of crypto trading, from understanding candlestick charts to spotting trends and managing risk.",
             duration: "30 Mins",
             xp: "150 XP",
             level: "Beginner"
           },
           {
-            image: "/img/metaverse.jpg",
-            title: "Crypto Security & How to Protect Your Assets",
-            description: "Learn crypto security, protect assets, prevent hacks, and secure transactions effectively.",
+            image: "/img/job.jpg",
+            title: "Breaking Into Web3: How to Land a Job in Crypto",
+            description: "Turn your interest in crypto into a career. This course covers real-world roles in Web3 and how to get them.",
             duration: "30 Mins",
             xp: "150 XP",
             level: "Beginner"

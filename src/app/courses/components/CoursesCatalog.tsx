@@ -34,21 +34,21 @@ const CoursesCatalog = () => {
     {
       id: "crypto_basics",
       title: "Crypto 101: The Basics of Digital Currency",
-      duration: "30 mins",
+      duration: "20 mins",
       difficulty: "Beginner",
       isProOnly: false,
       xpRequired: 0, // Free course
       image: "/img/coursesnode.jpeg",
       category: "100",
-      description: "Understand the fundamentals of cryptocurrency, how it works, and why it's different from traditional money."
+      description: "Understand the fundamentals of cryptocurrency, how it works, and why it's different from traditional currency."
     },
     {
       id: "blockchain_explained",
       title: "Blockchain Explained: The Technology Behind Crypto",
-      duration: "30 mins",
+      duration: "15 mins",
       difficulty: "Beginner",
       isProOnly: false,
-      xpRequired: 500, // requires 100xp making first course a must
+      xpRequired: 100, // requires 100xp making first course a must
       image: "/img/coinnode.jpeg",
       category: "150",
       description: "Learn how blockchain works, why it's secure, and how it powers cryptocurrencies like Bitcoin and Ethereum."
@@ -99,19 +99,19 @@ const CoursesCatalog = () => {
     },
     {
       id: "web3-jobs",
-      title: "Breaking Into Web3: How to Land a Job in Crypto & Blockchain",
-      duration: "30 mins",
+      title: "Breaking Into Web3: How to Land a Job in Crypto",
+      duration: "1.5 hrs",
       difficulty: "Advanced",
       isProOnly: true, // Pro-only course
       xpRequired: 5000, // Requires 5000 XP
       image: "/img/job.jpg",
       category: "500",
-      description: "Explore how crypto fuels the Metaverse, from virtual land ownership to in-game assets"
+      description: "Turn your interest in crypto into a career. This course covers real-world roles in Web3 and how to get them."
     },
     {
       id: "trading-201",
       title: "Trading 201: Advanced Trading Strategies & Risk Management",
-      duration: "1 hr", 
+      duration: "2 hrs", 
       difficulty: "Advanced",
       isProOnly: true, // Pro-only course
       xpRequired: 2000, // Requires 2000 XP

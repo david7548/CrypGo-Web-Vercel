@@ -5,6 +5,7 @@ import { IoBookOutline } from "react-icons/io5";
 import { HiOutlineVideoCamera } from "react-icons/hi2";
 import { IoTrophyOutline } from "react-icons/io5";
 import { IoCashOutline } from "react-icons/io5";
+import Link from "next/link";
 
 const HowItWorks = () => {
   const steps = [
@@ -12,25 +13,29 @@ const HowItWorks = () => {
       id: 1,
       title: "Course Discovery",
       icon: <IoBookOutline className="text-2xl text-indigo-500 group-hover:text-blue-600" />,
-      description: "Complete engaging and interactive courses."
+      description: "Complete engaging and interactive courses made for you.",
+      href: "/courses"
     },
     {
       id: 2,
       title: "Course Taking Process",
       icon: <HiOutlineVideoCamera className="text-2xl text-indigo-500 group-hover:text-blue-600" />,
-      description: "Start at beginner level courses and continue till master."
+      description: "Watch, read and explore, from the basics to blockchain expert.",
+      href: "/courses"
     },
     {
       id: 3,
       title: "XP Earning Mechanism",
       icon: <IoTrophyOutline className="text-2xl text-indigo-500 group-hover:text-blue-600" />,
-      description: "Earn XP for completing courses, Pro members get 1.5x boost."
+      description: "Earn XP for completing courses, Pro members get 1.5x boost.",
+      href: "/xp-dashboard"
     },
     {
       id: 4,
       title: "Prize Redemption",
       icon: <IoCashOutline className="text-2xl text-indigo-500 group-hover:text-blue-600" />,
-      description: "Earn cryptocurrency by climbing to the top of the leaderboard."
+      description: "Earn cryptocurrency by climbing to the top of the leaderboard.",
+      href: "/leaderboard"
     }
   ];
 
@@ -64,24 +69,26 @@ const HowItWorks = () => {
         {steps.map((step) => (
           <motion.div
             key={step.id}
-            className="group relative p-2 transition-all duration-300 cursor-pointer"
+            className="group relative p-2 transition-all duration-300"
             variants={cardVariants}
           >
-          <div className="bg-white rounded-xl shadow-md mb-16 p-7 w-full max-w-lg hover:shadow-xl hover:outline hover:outline-blue-500 hover:translate-y-[-4px] transition-transform duration-300">
-            <div className="flex items-center gap-4">
-              <div className="p-2 bg-blue-100 rounded-md">
-                {step.icon}
+            <Link href={step.href} className="block">
+              <div className="bg-white rounded-xl shadow-md mb-16 p-7 w-full max-w-lg hover:shadow-xl hover:outline hover:outline-blue-500 hover:translate-y-[-4px] transition-transform duration-300">
+                <div className="flex items-center gap-4">
+                  <div className="p-2 bg-blue-100 rounded-md">
+                    {step.icon}
+                  </div>
+                  <div>
+                    <h3 className="text-md font-semibold text-gray-900">
+                      {step.title}
+                    </h3>
+                  </div>
+                </div>
+                <p className="mt-4 mb-4 text-gray-600 leading-relaxed">
+                  {step.description}
+                </p>
               </div>
-              <div>
-                <h3 className="text-md font-semibold text-gray-900">
-                  {step.title}
-                </h3>
-              </div>
-            </div>
-            <p className="mt-4 mb-4 text-gray-600 leading-relaxed">
-              {step.description}
-            </p>
-          </div>
+            </Link>
           </motion.div>
         ))}
       </motion.div>

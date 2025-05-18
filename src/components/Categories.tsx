@@ -50,7 +50,7 @@ export default function Categories() {
         <div className="mb-4 lg:mb-0">
           <h2 className="text-2xl md:text-3xl font-bold mb-2 text-center lg:text-left">Our Course Categories</h2>
           <p className="text-gray-500 max-w-3xl text-center lg:text-left text-sm md:text-base">
-            Let's join our famous class, the knowledge provided will definitely be useful for you.
+          Dive into curated learning tracks covering the fundamentals of crypto to the future of blockchain.
           </p>
         </div>
         <div className="hidden md:flex gap-2">
